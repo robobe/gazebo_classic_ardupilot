@@ -1,0 +1,38 @@
+{
+    "name": "gazebo_classic_ardupilot",
+    "workspaceFolder": "/workspaces/gazebo_classic_ardupilot/",
+    "image": "gazebo:humble",
+    "remoteUser": "user",
+    "runArgs": [
+        "--name=gz_ardupilot",
+        "--hostname=gz",
+        "--privileged",
+        "--network=host",
+        "--hostname=gz",
+        "--device=/dev/dri:/dev/dri "
+    ],
+    //"postStartCommand": "source /workspaces/gazebo_tutorial/.devcontainer/post_start_script.sh",
+    // "postStartCommand": "/bin/bash 'source /workspaces/gazebo_tutorial/scripts/env.sh'",
+    "containerEnv": {
+        "DISPLAY": "unix:0",
+        "QT_X11_NO_MITSHM": "1"
+    },
+    "mounts": [
+        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+      ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "twxs.cmake",
+                "albert.tabout",
+                "redhat.vscode-xml"
+            ],
+            "settings": {
+                "[xml]": {
+                    "editor.defaultFormatter": "redhat.vscode-xml"
+                }
+            }
+        }
+    }  
+}
