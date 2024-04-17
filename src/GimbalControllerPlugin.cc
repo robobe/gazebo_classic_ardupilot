@@ -47,7 +47,7 @@ GimbalControllerPlugin::GimbalControllerPlugin()
 
 void GimbalControllerPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 {
-  gzmsg << "Gimbal controller 0.1" << std::endl;
+  gzmsg << "Gimbal controller 0.2" << std::endl;
   this->dataPtr->model = _model;
 
   this->dataPtr->roll_joint = this->dataPtr->model->GetJoint("my_gimbal_3d::roll");
@@ -103,13 +103,14 @@ void GimbalControllerPlugin::OnRequestMsg(ConstRequestPtr &_msg)
   */
   double rad = 0;
   auto mode = _msg->data();
+  std::transform(mode.begin(), mode.end(), mode.begin(), ::toupper);
   auto cmd = _msg->dbl_data();
-  if (mode == "pwm")
+  if (mode == "PWM")
   {
     auto deg = ((cmd - 1500) / 500) * 120;
     rad = 3.14 * deg / 180;
   }
-  else if (mode == "degree")
+  else if (mode == "DEGREE")
   {
     rad = 3.14 * cmd / 180;
   }
