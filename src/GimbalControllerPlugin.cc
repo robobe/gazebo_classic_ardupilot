@@ -47,7 +47,7 @@ GimbalControllerPlugin::GimbalControllerPlugin()
 
 void GimbalControllerPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 {
-  gzmsg << "Gimbal controller 0.2" << std::endl;
+  gzmsg << "Gimbal controller 0.3" << std::endl;
   this->dataPtr->model = _model;
 
   this->dataPtr->roll_joint = this->dataPtr->model->GetJoint("my_gimbal_3d::roll");

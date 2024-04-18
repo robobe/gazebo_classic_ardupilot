@@ -1,4 +1,4 @@
-<sdf version='1.6'>
+<sdf version='1.7'>
   <model name='my_gimbal_3d'>
     <link name='base_link'>
       <inertial>
