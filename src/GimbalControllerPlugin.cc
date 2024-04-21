@@ -42,7 +42,7 @@ GimbalControllerPlugin::GimbalControllerPlugin()
 {
   this->dataPtr->pitch_pid.Init(1.0, 0.1, 0.05, 0.1, -0.1, 1.0, -1.0);
   this->dataPtr->roll_pid.Init(2.0, 0.2, 0.1, 0.1, -0.1, 1.0, -1.0);
-  this->dataPtr->yaw_pid.Init(4.0, 0.1, 0.0, 0.05, -0.05, 1.0, -1.0);
+  this->dataPtr->yaw_pid.Init(2.0, 0.1, 0.8, 0.02, -0.02, 1.0, -1.0);
 }
 
 void GimbalControllerPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
