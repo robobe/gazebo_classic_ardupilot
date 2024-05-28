@@ -119,7 +119,7 @@ void GimbalControllerPlugin::OnRequestMsg(ConstRequestPtr &_msg)
     rad = cmd;
   }
 
-  gzwarn << "command: " << _msg->request() << ":" << rad << std::endl;
+  // gzwarn << "command: " << _msg->request() << ":" << rad << std::endl;
  
   if (_msg->request()=="roll"){
     this->dataPtr->roll_command=rad;
